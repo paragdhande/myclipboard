@@ -1,26 +1,40 @@
+<div class="row columns">
+  <button (click)="login()" *ngIf="!(user | async)?.uid">Anonymous Login</button>
+  <button (click)="loginGoogle()" *ngIf="!(user | async)?.uid">Google Login</button>
+  <button (click)="logout()" *ngIf="(user | async)?.uid">Logout</button>
+  <div>{{currentUser}}</div>
+  <input type="text" id="message" *ngIf="(user | async)?.uid" placeholder="What is it that you do?" (keyup.enter)="Send($event.target.value)" [(ngModel)]="msgVal" />
+  
+  <div id="details-container">
+      <p *ngFor="let item of items | async">{{item.message}}</p>
+  </div>
+</div>
+
+<!--
 <md-toolbar color="primary">
   
       <span>MyCompany</span>
       <span class="example-spacer"></span>
       <button md-button [mdMenuTriggerFor]="appMenu"><md-icon>menu</md-icon> Menu</button>
       
-  </md-toolbar>
+</md-toolbar>
   
-  <md-menu #appMenu="mdMenu">
-    <button md-menu-item> Settings </button>
-    <button md-menu-item> Help </button>
-  </md-menu>
+<md-menu #appMenu="mdMenu">
+  <button md-menu-item> Settings </button>
+  <button md-menu-item> Help </button>
+</md-menu>
 
-  <md-card class="example-card" *ngFor="let data of (myData ? myData.slice(0,10): []); let i = index">
+<md-card class="example-card" *ngFor="let data of (myData ? myData.slice(0,10): []); let i = index">
+  
+    <img md-card-image src="{{ data.url }}">
+    <md-card-header>
+      <md-card-title>{{ data.title }}</md-card-title>
+    </md-card-header>
+  
+    <md-card-actions>
+      <button md-button>LIKE</button>
+      <button md-button>SHARE</button>
+    </md-card-actions>
     
-      <img md-card-image src="{{ data.url }}">
-      <md-card-header>
-        <md-card-title>{{ data.title }}</md-card-title>
-      </md-card-header>
-    
-      <md-card-actions>
-        <button md-button>LIKE</button>
-        <button md-button>SHARE</button>
-      </md-card-actions>
-      
-    </md-card>
+</md-card>
+-->

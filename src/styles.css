@@ -1,6 +1,22 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
+
 body {
     padding: 2em 23em;
     background:lightgray;
+}
+
+
+* {
+    font-family: 'Raleway';
+}
+button {
+    background:#008FEF;
+    color:white;
+    padding: 1.2em;
+    width:300px;
+    text-align:center;
+    font-size:1.2em;
+    margin-bottom: 30px;
+    cursor:pointer;
 }

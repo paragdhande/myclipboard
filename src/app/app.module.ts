@@ -9,6 +9,7 @@ import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModu
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { FormsModule } from "@angular/forms";
 export const firebaseConfig = {
   apiKey: "AIzaSyCeIuCkghKFN-R0xbP65rt3RYqkgb0XScQ",
   authDomain: "my-clipboard-caf4c.firebaseapp.com",
@@ -23,6 +24,7 @@ export const firebaseConfig = {
   ],
   imports: [
     HttpModule,
+    FormsModule,
     BrowserModule,
     BrowserAnimationsModule,
     MdButtonModule,
@@ -32,7 +34,7 @@ export const firebaseConfig = {
     MdIconModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule    
   ],
   providers: [],
   bootstrap: [AppComponent]
